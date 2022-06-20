@@ -23,11 +23,11 @@ fn main() {
 fn validate_arguments(file_path_str: &str) {
     let file_path = Path::new(file_path_str);
     if !file_path.exists() {
-        print!("The given file path [{}] doesn't exist", file_path_str);
+        eprintln!("The given file path [{}] doesn't exist", file_path_str);
         process::exit(exitcode::DATAERR);
     }
     if !file_path.is_file() {
-        print!("The given file path [{}] is not a file", file_path_str);
+        eprintln!("The given file path [{}] is not a file", file_path_str);
         process::exit(exitcode::DATAERR);
     }
 }
